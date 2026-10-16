@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="about.html">Giới thiệu</a>
+    <a href="contact.html">Liên hệ</a>
+  </nav>
+
+  <main class="contact-page">
+    <header class="contact-intro">
+      <h1>Liên hệ với mình</h1>
+      <p>Nếu bạn muốn trao đổi hoặc kết nối, hãy gửi lời nhắn cho mình nhé!</p>
+    </header>
+
+    <div class="contact-layout">
+      <section class="contact-card">
+        <h2>Thông tin liên hệ</h2>
+        <p><strong>Email:</strong> lamvinhdiec@gmail.com</p>
+        <p><strong>Địa chỉ:</strong> Việt Nam</p>
+        <p><strong>Facebook: </strong><a href="https://www.facebook.com/vinhlam.diec.7" target="_blank"><strong>Diệc Vĩnh Lâm</strong></a></p>
+      </section>
+
+      <form class="contact-form" id="contactForm">
+        <h2>Gửi lời nhắn</h2>
+        <label for="name">Họ và tên</label>
+        <input id="name" name="name" type="text" placeholder="Nhập họ và tên" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
+
+        <label for="subject">Chủ đề</label>
+        <input id="subject" name="subject" type="text" placeholder="Chủ đề liên hệ" required>
+
+        <label for="message">Nội dung</label>
+        <textarea id="message" name="message" rows="5" placeholder="Nhập lời nhắn của bạn..." required></textarea>
+
+        <button type="submit">Gửi lời nhắn</button>
+        <p id="formMessage" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      formMessage.textContent = 'Biểu mẫu đã được kiểm tra. Website hiện chưa gửi tin nhắn đến email.';
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
